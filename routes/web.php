@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('inicio');
+
+// Las 7 rutas para realizar el CRUD de cursos
+
+Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
+
+
 
 Auth::routes();
 
