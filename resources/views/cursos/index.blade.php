@@ -5,6 +5,13 @@
 
         <h1>Bienvenido a la pagina de cursos</h1>
 
+        {{-- solo los usuarios autenticados pueden agregar articulos --}}
+        @auth
+        <div class="mt-4">
+            <a href="{{route('cursos.create')}}" class="btn btn-primary">Crear curso</a>
+        </div>
+        @endauth
+
         {{-- hacer listado de cursos con foreach para mostrarlos en el sitio web 
     cuando se haga clic en menu catalogos --}}
 
@@ -33,15 +40,7 @@
                 </div>
             @endforeach
         </div>
-
-
-        {{-- solo los usuarios autenticados pueden agregar articulos --}}
-        @auth
-            <div class="d-flex justify-content-center mt-4">
-                <a href="{{ route('cursos.create') }} " class="btn btn-primary">Crear curso</a>
-            </div>
-        @endauth
-
+        
         {{-- si existe una variable de sesion 'info' se genera un alerta con el mensaje de session 'with('info', 'Mensaje enviado')' del metodo store de ContactController --}}
         @if (session('info'))
             <script>

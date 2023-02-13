@@ -48,8 +48,7 @@
 
             @error('categoria')
                 <br>
-                <p><strong>{{ $message }}</strong></p>
-                {{-- <small>*{{ $message }}</small> --}}
+                <small>*{{ $message }}</small>
                 <br>
             @enderror
 

@@ -23,16 +23,21 @@ Route::get('/', function () {
 
 Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
 Route::get('cursos/{curso}', [CursoController::class, 'show'])->name('cursos.show');
-Route::get('cursos/create', [CursoController::class, 'create'])->name('cursos.create');
-// crear una ruta post para el formulario que esta en la vista cursos.create
-Route::post('cursos', [CursoController::class, 'store'])->name('cursos.store');
-Route::get('cursos/{curso}/edit', [CursoController::class, 'edit'])->name('cursos.edit');
+// Route::get('cursos/create', [CursoController::class, 'create'])->name('cursos.create'); // Esta ruta dio problemas
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('cursoscreate', [CursoController::class, 'create'])->name('cursos.create');
+    // crear una ruta post para el formulario que esta en la vista cursos.create
+    Route::post('cursos', [CursoController::class, 'store'])->name('cursos.store');
+    Route::get('cursos/{curso}/edit', [CursoController::class, 'edit'])->name('cursos.edit');
+    Route::post('cursos/{curso}', [CursoController::class, 'update'])->name('cursos.update');
+    // Ruta para eliminar un registro con el metodo delete
+    Route::post('cursos/{curso}', [CursoController::class, 'destroy'])->name('cursos.destroy');
+});
 
-// Ruta para eliminar un registro con el metodo delete
-Route::delete('cursos/{curso}', [CursoController::class, 'destroy'])->name('cursos.destroy');
-
-
+// ruta para el correo
+Route::get('contactanos', [ContactanosController::class, 'index'])->name('contactanos.index');
+Route::post('contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');
 
 Auth::routes();
 

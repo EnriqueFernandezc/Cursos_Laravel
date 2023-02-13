@@ -10,7 +10,7 @@
             @csrf
 
             <div class="form-group my-4">
-                <label for="title" class="form-label">Nombre del artículo</label>
+                <label for="title" class="form-label">Nombre del curso</label>
                 <input type="text" name="title" class="form-control" id="title" placeholder="Ingrese nombre del artículo" value="{{old('title', $curso->title)}}">
             </div>
 
@@ -38,7 +38,7 @@
 
             <div class="form-group my-4">
                 <label for="img" class="form-label">Imagen actual</label>
-                <img src="{{$curso->img}}" class="w-25" alt="Juguete">
+                <img src="{{$curso->img}}" class="w-25" alt="Curso">
             </div>
 
             <button type="submit" class="btn btn-primary">Guardar</button>

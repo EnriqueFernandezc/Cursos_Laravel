@@ -48,7 +48,7 @@
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Nosotros') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Contactanos') }}</a>
+                            <a class="nav-link" href="{{ route('contactanos.index') }}">{{ __('Contactanos') }}</a>
                         </li>
                     </ul>
 
