@@ -25,9 +25,7 @@
 
             {{-- error verifica si hay un error de validacion del campo name imprime un mensaje de error --}}
             @error('title')
-                <br>
-                <small>*{{ $message }} </small>
-                <br>
+                <p><strong>*{{ $message }}</strong></p>
             @enderror
 
             <div class="form-group my-4">
@@ -36,9 +34,7 @@
             </div>
 
             @error('description')
-                <br>
-                <small>*{{ $message }}</small>
-                <br>
+                <p><strong>*{{ $message }}</strong></p>
             @enderror
 
             <div class="form-group my-4">
@@ -47,9 +43,7 @@
             </div>
 
             @error('categoria')
-                <br>
-                <small>*{{ $message }}</small>
-                <br>
+                <p><strong>*{{ $message }}</strong></p>
             @enderror
 
             <div class="form-group my-4">

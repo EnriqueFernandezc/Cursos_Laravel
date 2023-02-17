@@ -15,9 +15,7 @@
             </div>
 
             @error('title')
-                <br>
-                <small>*{{ $message }} </small>
-                <br>
+            <p><strong>*{{ $message }}</strong></p>
             @enderror
 
             <div class="form-group my-4">
@@ -26,9 +24,16 @@
             </div>
 
             @error('description')
-                <br>
-                <small>*{{ $message }} </small>
-                <br>
+            <p><strong>*{{ $message }}</strong></p>
+            @enderror
+
+            <div class="form-group my-4">
+                <label for="categoria" class="form-label">Categoría</label>
+                <input type="text" name="categoria" class="form-control" id="categoria" value="{{ old('categoria') }}" placeholder="Ingrese categoría del curso">
+            </div>
+
+            @error('categoria')
+            <p><strong>*{{ $message }}</strong></p>
             @enderror
 
             <div class="form-group my-4">

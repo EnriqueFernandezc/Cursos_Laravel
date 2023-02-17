@@ -75,25 +75,32 @@ class CursoController extends Controller
     {
         // se pasa el array del request al método fill y este se encarga de actualizar
         // los campos permitidos en el registro de la bd
+        // $curso->update($request->all());
         $curso->fill($request->validated());
+
+        // $curso->title=$request->title;
+        // $curso->description=$request->description;
+        // $curso->categoria=$request->categoria;
+        // $curso->save();
 
         //guardar la imagen enviada desde el formulario
         $url = '';
         // si la request tiene una imagen ejecutar codigo
         if ($request->hasFile('img')) {
             // el fichero request 'img' se guardara en la carpeta privada
-            // storage 'public/toy' y su ruta se guardara en $url
+            // storage 'public/curso' y su ruta se guardara en $url
             $url = Storage::url($request->file('img')->store('public/curso'));
         }
 
-        // el atributo img de $toy sera igual a $url
+        // el atributo img de $curso sera igual a $url
         // es decir se agrega la url de la imagen en la bd
         $curso->img = $url;
 
         //guardar
         $curso->saveOrFail();
 
-        //redirigir al listado (index) despues de guardar
+        //redirigir al curso actualizado despues de guardar
+        // return redirect()->route('cursos.show', $curso);
         return redirect()->route('cursos.show', $curso);
     }
 

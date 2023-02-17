@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="contenido">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -45,7 +45,7 @@
                             <a class="nav-link" href="{{ route('cursos.index') }}">{{ __('Cursos') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Nosotros') }}</a>
+                            <a class="nav-link" href="{{ route('nosotros') }}">{{ __('Nosotros') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('contactanos.index') }}">{{ __('Contactanos') }}</a>
@@ -96,6 +96,10 @@
             @yield('content')
         </main>
     </div>
+
+    <x-footer/>
+
+    
 </body>
 
 </html>
