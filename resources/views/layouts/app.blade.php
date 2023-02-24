@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div id="app" class="contenido">
+    <div id="app" style="margim-bottom: 150px">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -98,8 +98,6 @@
     </div>
 
     <x-footer/>
-
     
 </body>
-
 </html>
